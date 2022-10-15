@@ -1,0 +1,54 @@
+Original Paper:
+
+alternatives = [1, 2, 3, 4, 5]
+attributes = ["Rent", "Distance", "Safety", "Facilities", "Quality"]
+performance_matrix = [
+    [-14, 90, 0, 40, 100],
+    [129, 100, 0, 0, 0],
+    [-10, 50, 0, 10, 100],
+    [44, 90, 0, 5, 20],
+    [-14, 100, 0, 20, 40]
+]
+weights = [0.2, 0.2, 0.2, 0.2, 0.2]
+q = [25, 16, 0, 12, 10]
+p = [50, 24, 1, 24, 20]
+v = [100, 60, 2, 48, 90]
+l = 0.15
+gain_loss = [1, 1, 1, 1, 1]
+
+
+
+Slides:
+
+alternatives = [1, 2, 3, 4, 5, 6, 7]
+attributes = ["Rent", "Distance", "Safety", "Facilities"]
+performance_matrix = [
+    [400, 7, 5, 85],
+    [450, 6, 9, 90],
+    [420, 6.1, 7, 60],
+    [300, 10, 6, 75],
+    [650, 1, 9, 90],
+    [540, 2.5, 8, 75],
+    [500, 3.5, 4, 75]
+]
+weights = [0.27, 0.33, 0.25, 0.15]
+q = [100, 1, 1, 10]  # Indifference Threshold
+p = [150, 2, 2, 20]  # Preference Threshold
+v = [300, 5, 7, 50]  # Veto
+l = 0.3  # Cut-Off Value
+gain_loss = [-1, -1, 1, 1]
+
+
+Heritage:
+
+alternatives = open("countries.csv", "r", encoding='utf-8-sig').read().splitlines()
+attributes = open('attributes.csv', "r", encoding='utf-8-sig').read().splitlines()
+performance_matrix = genfromtxt('performance_matrix.csv', delimiter=';', dtype=float, encoding='utf-8-sig')
+
+q = [10 for _ in range(len(alternatives))]  # Indifference Threshold
+p = [20 for _ in range(len(alternatives))]  # Preference Threshold
+v = [50 for _ in range(len(alternatives))]  # Veto
+
+weights = [1/len(attributes) for _ in range(len(attributes))]
+l = 0.1  # Cut-Off Value
+gain_loss = [1 for _ in range(len(attributes))]
