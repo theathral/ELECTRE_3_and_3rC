@@ -124,22 +124,22 @@ def method(performance_matrix, gain_loss, alternatives, classes, attributes, wei
 
     print("Credibility Matrix:")
     credibility_matrix_perf = credibility_index(concordance_matrix_perf, discordance_matrix_perf)
-    func.export_matrix_to_csv("results/credibility_perf.csv", credibility_matrix_perf)
+    func.export_matrix_to_csv("results/credibility_rc_perf.csv", credibility_matrix_perf)
     print(np.round(np.matrix(credibility_matrix_perf)))
 
     credibility_matrix_prof = credibility_index(concordance_matrix_prof, discordance_matrix_prof)
-    func.export_matrix_to_csv("results/credibility_prof.csv", credibility_matrix_prof)
+    func.export_matrix_to_csv("results/credibility_rc_prof.csv", credibility_matrix_prof)
     print(np.round(np.matrix(credibility_matrix_prof)))
 
     print()
 
     print("Credibility Threshold")
     credibility_threshold_perf = credibility_threshold_matrix(credibility_matrix_perf, l)
-    func.export_matrix_to_csv("results/credibility_threshold_perf.csv", credibility_threshold_perf)
+    func.export_matrix_to_csv("results/credibility_rc_threshold_perf.csv", credibility_threshold_perf)
     print(np.matrix(credibility_threshold_perf))
 
     credibility_threshold_prof = credibility_threshold_matrix(credibility_matrix_prof, l)
-    func.export_matrix_to_csv("results/credibility_threshold_prof.csv", credibility_threshold_prof)
+    func.export_matrix_to_csv("results/credibility_rc_threshold_prof.csv", credibility_threshold_prof)
     print(np.matrix(credibility_threshold_prof))
 
     print()
