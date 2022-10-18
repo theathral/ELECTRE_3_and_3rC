@@ -89,8 +89,6 @@ def assessment(cred_perf, cred_prof, cred_thres_perf, cred_thres_prof, alternati
                     clusters[alternatives[alt]].append(classes[pr - 1])
                 break
 
-
-
     return clusters
 
 
